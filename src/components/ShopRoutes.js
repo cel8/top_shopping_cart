@@ -1,8 +1,8 @@
 
 import { Routes, Route } from 'react-router-dom';
-import Shop from './Shop';
-import ProductNotFound from './ProductNotFound';
-import Product from './Product';
+import Shop from '@components/Shop';
+import ProductNotFound from '@components/ProductNotFound';
+import Product from '@components/Product';
 
 const ShopRoutes = () => {
   return (

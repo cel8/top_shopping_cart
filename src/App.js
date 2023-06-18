@@ -2,11 +2,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faHouse, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { Link, Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
-import ShopRoutes from './components/ShopRoutes';
-import Cart from './components/Cart';
-import NotFound from './components/NotFound';
-import './styles/App.css';
+import Home from '@components/Home';
+import ShopRoutes from '@components/ShopRoutes';
+import Cart from '@components/Cart';
+import NotFound from '@components/NotFound';
+import '@styles/App.css';
 
 function App() {
   const curYear = new Date().getFullYear();
