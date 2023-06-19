@@ -1,0 +1,23 @@
+.catalogContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.productContainer {
+  margin: 2rem;
+  border: 0.1rem solid black;
+  padding: 1rem;
+}
+
+.productItem > img {
+  width: 20rem;
+}
+
+.containerBuy {
+  display: flex;
+  justify-content: space-between;
+}
+

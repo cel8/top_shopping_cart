@@ -1,8 +1,8 @@
 
 import { Routes, Route } from 'react-router-dom';
-import Shop from '@components/Shop';
-import ProductNotFound from '@components/ProductNotFound';
-import Product from '@components/Product';
+import { Shop } from '@pages/Shop';
+import { ProductNotFound } from '@components/ProductNotFound';
+import { Product } from '@components/Product';
 
 const ShopRoutes = () => {
   return (
@@ -14,4 +14,4 @@ const ShopRoutes = () => {
   );
 };
 
-export default ShopRoutes;
+export { ShopRoutes };

@@ -49,15 +49,6 @@ const productsList = [
     id: `pizza_${uniqid()}`,
     to: 'product/5',
     category: 'special',
-    name: 'Margherita Sbagliata',
-    description: 'Campana DOP Buffalo mozzarella cheese, purée of "riccio" tomatoes, basil reduction, Evo oil.',
-    price: 10.00,
-    image: pizzaMargheritaSbagliata
-  },
-  {
-    id: `pizza_${uniqid()}`,
-    to: 'product/6',
-    category: 'special',
     name: 'Sfizio ai pomodori',
     description: 'Campana DOP buffalo mozzarella, yellow datterino tomatoes, sun dried tomatoes, 24-month Grana Padano DOP cheese, EVO oil.',
     price: 12.00,
@@ -65,12 +56,21 @@ const productsList = [
   },
   {
     id: `pizza_${uniqid()}`,
-    to: 'product/7',
+    to: 'product/6',
     category: 'special',
     name: 'Sapori del Cilento',
     description: 'Campana DOP buffalo mozzarella, buffalo ricotta cheese, Paestum artichokes, EVO oil.',
     price: 12.00,
     image: pizzaRicotta
+  },
+  {
+    id: `pizza_${uniqid()}`,
+    to: 'product/7',
+    category: 'special',
+    name: 'Margherita Sbagliata',
+    description: 'Campana DOP Buffalo mozzarella cheese, purée of "riccio" tomatoes, basil reduction, Evo oil.',
+    price: 10.00,
+    image: pizzaMargheritaSbagliata
   },
   {
     id: `pizza_${uniqid()}`,
@@ -83,4 +83,4 @@ const productsList = [
   }
 ];
 
-export default productsList;
+export { productsList };

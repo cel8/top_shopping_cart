@@ -2,10 +2,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faHouse, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { Link, Route, Routes } from 'react-router-dom';
-import Home from '@components/Home';
-import ShopRoutes from '@components/ShopRoutes';
-import Cart from '@components/Cart';
-import NotFound from '@components/NotFound';
+import { Home } from '@pages/Home';
+import { ShopRoutes } from '@pages/ShopRoutes';
+import { Cart } from '@components/Cart';
+import { NotFound } from '@components/NotFound';
 import '@styles/App.css';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ul><Link to="/"><FontAwesomeIcon icon={faHouse} /></Link></ul>
+        <ul><Link to="/"><FontAwesomeIcon icon={faHouse} className='App-link'/></Link></ul>
         <ul><Link to="/catalog">Shop</Link></ul>
         <ul><Link to="/cart"><FontAwesomeIcon icon={faCartShopping} /></Link></ul>
       </header>
