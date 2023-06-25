@@ -9,9 +9,8 @@ import { useCallback } from 'react';
 const Shop = () => {
   const contextValue = useCartContext();
   
-  const onClickAddItem = useCallback((event, product) => {
-    console.log(product);
-    console.log(contextValue);
+  const onClickAddItem = useCallback((product) => {
+    contextValue.add(product);
   }, [contextValue]);
 
   return (
@@ -29,8 +28,8 @@ const Shop = () => {
                 </div>
               </Link>
               <div className="containerBuy">
-                <button onClick={(event) => onClickAddItem(event, product)}><FontAwesomeIcon icon={faCartPlus} /></button>
-                <button><Link to='/cart'>buy now</Link></button>
+                <button onClick={() => onClickAddItem(product)}><FontAwesomeIcon icon={faCartPlus} /></button>
+                <button onClick={() => onClickAddItem(product)}><Link to='/cart'>buy now</Link></button>
               </div>
             </div>
           )
