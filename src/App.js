@@ -4,7 +4,8 @@ import { faHouse, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { Link, Route, Routes } from 'react-router-dom';
 import { Home } from '@pages/Home';
 import { ShopRoutes } from '@pages/ShopRoutes';
-import { Cart } from '@components/Cart';
+import { Cart } from '@pages/Cart';
+import { CartProvider } from '@components/CartProvider';
 import { NotFound } from '@components/NotFound';
 import '@styles/App.css';
 
@@ -18,12 +19,14 @@ function App() {
         <ul><Link to="/catalog">Shop</Link></ul>
         <ul><Link to="/cart"><FontAwesomeIcon icon={faCartShopping} /></Link></ul>
       </header>
-      <Routes>
-        <Route exact path='/' element={<Home/>}/>
-        <Route path='/catalog/*' element={<ShopRoutes/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-        <Route path='*' element={<NotFound/>}/>
-      </Routes>
+      <CartProvider>
+        <Routes>
+          <Route exact path='/' element={<Home/>}/>
+          <Route path='/catalog/*' element={<ShopRoutes/>}/>
+          <Route path='/cart' element={<Cart/>}/>
+          <Route path='*' element={<NotFound/>}/>
+        </Routes>
+        </CartProvider>
       <footer className="App-footer">
         <div>Copyright © {curYear} - Alessandro Celotti <a className="App-link" href="https://github.com/cel8"><FontAwesomeIcon icon={faGithub}/></a></div>
       </footer>

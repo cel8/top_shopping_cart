@@ -2,9 +2,18 @@ import { productsList } from '@components/ProductsList';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import { useCartContext } from '@components/CartProvider';
 import '@styles/Shop.css';
+import { useCallback } from 'react';
 
 const Shop = () => {
+  const contextValue = useCartContext();
+  
+  const onClickAddItem = useCallback((event, product) => {
+    console.log(product);
+    console.log(contextValue);
+  }, [contextValue]);
+
   return (
     <div>
       <h1>Shop</h1>
@@ -20,7 +29,7 @@ const Shop = () => {
                 </div>
               </Link>
               <div className="containerBuy">
-                <button><FontAwesomeIcon icon={faCartPlus} /></button>
+                <button onClick={(event) => onClickAddItem(event, product)}><FontAwesomeIcon icon={faCartPlus} /></button>
                 <button><Link to='/cart'>buy now</Link></button>
               </div>
             </div>
