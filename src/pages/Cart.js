@@ -29,6 +29,18 @@ const Cart = () => {
             )
           })
         }
+        {
+          contextValue && (contextValue.cart.length === 0) && <p>Cart is empty</p>
+        }
+      </div>
+      <div className="orderBox">
+        {
+          <div>
+            <p>Order Summary</p>
+            <p>Items: {contextValue ? contextValue.orderItems() : 0}</p>
+            <p>Order total: {contextValue ? contextValue.orderTotal() : 0} €</p>
+          </div>
+        }
       </div>
     </div>
   )

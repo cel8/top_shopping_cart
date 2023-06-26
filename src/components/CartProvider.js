@@ -79,11 +79,28 @@ const CartProvider = ({children}) => {
     }
   }, [get]);
 
+  const orderTotal = useCallback(() => {
+    const currencyOptions = {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }
+
+    const total = cart.reduce((price, item) => price + (item.amount * item.product.price), 0);
+    return total.toLocaleString(undefined, currencyOptions)
+  }, [cart]);
+
+  const orderItems = useCallback(() => {
+    const total = cart.reduce((totalAmount, item) => totalAmount + item.amount, 0);
+    return total;
+  }, [cart]);
+
   const contextValue = useMemo(() => ({
     cart,
     add,
-    remove
-  }), [cart, add, remove]);
+    remove,
+    orderTotal,
+    orderItems
+  }), [cart, add, remove, orderTotal, orderItems]);
 
   return (
     <CartContext.Provider value={contextValue}>
