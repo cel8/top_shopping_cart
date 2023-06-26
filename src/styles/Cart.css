@@ -1,0 +1,9 @@
+.productCartItem {
+  margin: 2rem;
+  border: 0.1rem solid black;
+  padding: 1rem;
+}
+
+.productCartItem > img {
+  width: 10rem;
+}
