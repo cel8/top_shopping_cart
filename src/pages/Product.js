@@ -3,6 +3,8 @@ import { productsList } from '@components/ProductsList';
 import { NotFound } from '@components/NotFound';
 import { useCallback } from "react";
 
+// TODO: navigate to cart (and buy), navigate back if product is not requested
+
 const Product = () => {
   const { id } = useParams();
   const productID = parseInt(id, 10);

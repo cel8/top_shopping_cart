@@ -1,7 +1,7 @@
 import { categoryList, productsList } from '@components/ProductsList';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCartPlus, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useCartContext } from '@components/CartProvider';
 import '@styles/Shop.css';
 import { useCallback, useState } from 'react';
@@ -10,6 +10,9 @@ const Shop = () => {
   const contextValue = useCartContext();
 
   const [category, setCategory] = useState(categoryList['all']);
+  const [searchToken, setSearchToken] = useState("");
+  const [searchParam, setSearchParam] = useSearchParams({p: -1});
+  const navigate = useNavigate();
   
   const onClickAddItem = useCallback((product) => {
     contextValue.add(product);
@@ -22,6 +25,24 @@ const Shop = () => {
   const onCategoryClick = useCallback((categoryName) => {
     setCategory(categoryName);
   }, []);
+
+  const onSearchBarChange = useCallback((event) => {
+    const token = event.target.value;
+    setSearchToken(token);
+    const index = token === "" ? -1 : productsList.findIndex(product => {
+      return product.name.toLowerCase().includes(token.toLowerCase())
+    });
+    setSearchParam({ p: index });
+  }, [setSearchParam]);
+
+  const onSearchSubmit = useCallback((event) => {
+    event.preventDefault();
+    const index = searchParam.get('p');
+    const url = index === "-1" ? 'product/404' : productsList[index].to;
+    setTimeout(() => {
+      navigate(`/catalog/${url}`);    
+    }, 500);
+  }, [searchParam, navigate]);
 
   return (
     <div>
@@ -39,6 +60,10 @@ const Shop = () => {
                 onClick={() => onCategoryClick(categoryList['special'])}>
           {categoryList['special']}
         </button>
+      </div>
+      <div className="searchBar">
+        <input type="text" value={searchToken} onChange={e => onSearchBarChange(e)}/>
+        <button onClick={e => onSearchSubmit(e)}><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
       </div>
       <div className="catalogContainer">
       {
