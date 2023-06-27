@@ -24,7 +24,7 @@ function App() {
           <Route exact path='/' element={<Home/>}/>
           <Route path='/catalog/*' element={<ShopRoutes/>}/>
           <Route path='/cart' element={<Cart/>}/>
-          <Route path='*' element={<NotFound/>}/>
+          <Route path='*' element={<NotFound destination='/' name='page' />}/>
         </Routes>
         </CartProvider>
       <footer className="App-footer">

@@ -1,16 +1,26 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const NotFound = () => {
+const NotFound = (props) => {
+  const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     setTimeout(() => {
-      navigate('/');    
-    }, 1000);
-  }, [navigate]);
+      navigate(props.destination);    
+    }, 2500);
+  }, [navigate, props]);
 
-  return <div>Page not found</div>
+  return (
+    <div className="notFoundContainer">
+      <div className="ops">
+        Oops,
+      </div>
+      <div>
+        <div>Sorry, cannot found this </div><div className="notFoundName">{props.name} {id}</div>
+      </div>
+    </div>
+  )
 }
 
 export { NotFound };

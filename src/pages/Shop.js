@@ -24,7 +24,10 @@ const Shop = () => {
               <Link to={product.to}>
                 <div className="productItem">
                   <img src={product.image} alt={product.id} />
-                  <p>{product.name}</p>
+                  <div>
+                    <p>{product.name}</p>
+                    <p>{product.price} €</p>
+                  </div>
                 </div>
               </Link>
               <div className="containerBuy">
