@@ -31,7 +31,7 @@ const Product = () => {
               <FontAwesomeIcon icon={faCircleLeft} />
             </button>
             <button onClick={() => onClickAddItem(getProduct(productID))}><FontAwesomeIcon icon={faCartPlus} /></button>
-            <button onClick={() => onClickAddItem(getProduct(productID))}><Link to='/cart'>buy now</Link></button>
+            <button onClick={() => onClickAddItem(getProduct(productID))}><Link to='/cart' className="App-link">buy now</Link></button>
           </div>
           <div className="product">
             <p>{getProduct(productID).name}</p>

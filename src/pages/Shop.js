@@ -71,7 +71,7 @@ const Shop = () => {
           return (
             ((product.category === category) || (category === categoryList['all'])) &&
             <div className="productContainer" key={product.id}>
-              <Link to={product.to}>
+              <Link to={product.to} className="App-link">
                 <div className="productItem">
                   <img src={product.image} alt={product.id} />
                   <div>
@@ -82,7 +82,7 @@ const Shop = () => {
               </Link>
               <div className="containerBuy">
                 <button onClick={() => onClickAddItem(product)}><FontAwesomeIcon icon={faCartPlus} /></button>
-                <button onClick={() => onClickAddItem(product)}><Link to='/cart'>buy now</Link></button>
+                <button onClick={() => onClickAddItem(product)}><Link to='/cart' className="App-link">buy now</Link></button>
               </div>
             </div>
           )

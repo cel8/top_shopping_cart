@@ -39,6 +39,7 @@ const Cart = () => {
             <p>Order Summary</p>
             <p>Items: {contextValue ? contextValue.orderItems() : 0}</p>
             <p>Order total: {contextValue ? contextValue.orderTotal() : 0} €</p>
+            <button onClick={() => alert("Thanks for using the website. This was just an exercise made for The Odin Project.")}>Checkout</button>
           </div>
         }
       </div>
