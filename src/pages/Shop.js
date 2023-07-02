@@ -45,8 +45,7 @@ const Shop = () => {
   }, [searchParam, navigate]);
 
   return (
-    <div>
-      <h1>Shop</h1>
+    <div className="App-container">
       <div className="categoryContainer">
         <button disabled={enableCategoryButton(categoryList['all'])} 
                 onClick={() => onCategoryClick(categoryList['all'])}>

@@ -1,6 +1,7 @@
 import imgRestaurant from '@assets/restaurant.jpg';
 import { useWindowSize } from "react-use";
 import { useCallback, useEffect, useState, useRef } from "react";
+import '@styles/Custom.css';
 
 const Home = () => {
   const { height } = useWindowSize();
@@ -39,17 +40,16 @@ const Home = () => {
   }, [y0, onResize]);
 
   return (
-    <div ref={divRef} style={{
+    <div className="App-container" ref={divRef} style={{
       backgroundImage: `url(${imgRestaurant})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      height: `${height.toFixed(0) - y0}px`,
-      overflow: 'none'
+      height: `${height.toFixed(0) - y0}px`
     }}>
-      <h1>Home</h1>
-      <div className="container">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime inventore, officiis neque accusamus tempore quas porro sed autem totam! Corporis laboriosam tempore et natus, eligendi hic excepturi esse harum animi!
+      <div className="Home-container">
+        <div>
+          <h1>ShopizzaFy</h1>
+          <div className='subtitle'>Special pizza on-demand!</div>
+        </div>
+        <div className='credits'>All rights to the images belongs to <a className="App-link" href="https://www.pepeingrani.it/">Pepe in Grani</a></div>
       </div>
     </div>
   )

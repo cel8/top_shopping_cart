@@ -21,8 +21,7 @@ const Product = () => {
   }, [contextValue]);
 
   return (
-    <div>
-      <h1>Product</h1>
+    <div className="App-container">
       {
         !isNaN(productID) && (productID >= 1 && productID < productsList.length) &&
         <div>
@@ -34,7 +33,7 @@ const Product = () => {
             <button onClick={() => onClickAddItem(getProduct(productID))}><Link to='/cart' className="App-link">buy now</Link></button>
           </div>
           <div className="product">
-            <p>{getProduct(productID).name}</p>
+            <h1>{getProduct(productID).name}</h1>
             <p>{getProduct(productID).category}</p>
             <p>{getProduct(productID).description}</p>
             <p>{getProduct(productID).price} €</p>
