@@ -3,8 +3,8 @@ import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useCartContext } from '@components/CartProvider';
-import '@styles/Shop.css';
 import { useCallback, useState } from 'react';
+import '@styles/Shop.css';
 
 const Shop = () => {
   const contextValue = useCartContext();
@@ -44,6 +44,12 @@ const Shop = () => {
     }, 500);
   }, [searchParam, navigate]);
 
+  const onKeyDown = useCallback((event) => {
+    if (event.key === 'Enter') {
+      onSearchSubmit(event);
+    }
+  }, [onSearchSubmit]);
+
   return (
     <div className="App-container">
       <div className="categoryContainer">
@@ -61,7 +67,7 @@ const Shop = () => {
         </button>
       </div>
       <div className="searchBar">
-        <input type="text" value={searchToken} onChange={e => onSearchBarChange(e)}/>
+        <input type="text" value={searchToken} onChange={e => onSearchBarChange(e)} onKeyDown={e => onKeyDown(e)}/>
         <button onClick={e => onSearchSubmit(e)}><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
       </div>
       <div className="catalogContainer">

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import '@styles/Custom.css'
 
 const NotFound = (props) => {
   const { id } = useParams();
@@ -12,12 +13,10 @@ const NotFound = (props) => {
   }, [navigate, props]);
 
   return (
-    <div className="notFoundContainer">
+    <div className="App-container">
       <div className="ops">
         Oops,
-      </div>
-      <div>
-        <div>Sorry, cannot found this </div><div className="notFoundName">{props.name} {id}</div>
+        <div>Sorry, cannot found this <div>{props.name} {id}</div>.</div>
       </div>
     </div>
   )

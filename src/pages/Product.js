@@ -5,6 +5,7 @@ import { useCallback } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleLeft, faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { useCartContext } from '@components/CartProvider';
+import '@styles/Product.css';
 
 const Product = () => {
   const { id } = useParams();
@@ -12,7 +13,8 @@ const Product = () => {
   const navigate = useNavigate();
   const contextValue = useCartContext();
 
-  const getProduct = useCallback((id) => {
+  const getProduct = useCallback(() => {
+    console.log(productsList[productID - 1].name)
     return productsList[productID - 1];
   }, [productID]);
 
@@ -23,26 +25,24 @@ const Product = () => {
   return (
     <div className="App-container">
       {
-        !isNaN(productID) && (productID >= 1 && productID < productsList.length) &&
-        <div>
-          <div>
+        !isNaN(productID) && (productID >= 1 && productID <= productsList.length) &&
+        <div className="product">
+          <h1>{getProduct().name}</h1>
+          <p>Category: <p>{getProduct().category}</p></p>
+          <p>Description: <p>{getProduct().description}</p></p>
+          <p>Price: <p>{getProduct().price} €</p></p>
+          <div className="product-control">
             <button onClick={() => navigate(-1)}>
               <FontAwesomeIcon icon={faCircleLeft} />
             </button>
-            <button onClick={() => onClickAddItem(getProduct(productID))}><FontAwesomeIcon icon={faCartPlus} /></button>
-            <button onClick={() => onClickAddItem(getProduct(productID))}><Link to='/cart' className="App-link">buy now</Link></button>
+            <button onClick={() => onClickAddItem(getProduct())}><FontAwesomeIcon icon={faCartPlus} /></button>
+            <button onClick={() => onClickAddItem(getProduct())}><Link to='/cart' className="App-link">buy now</Link></button>
           </div>
-          <div className="product">
-            <h1>{getProduct(productID).name}</h1>
-            <p>{getProduct(productID).category}</p>
-            <p>{getProduct(productID).description}</p>
-            <p>{getProduct(productID).price} €</p>
-            <img src={getProduct(productID).image} alt={getProduct(productID).id} />
-          </div>
+          <img src={getProduct().image} alt={getProduct().id} />
         </div>
       }
       {
-        (isNaN(productID) || (productID < 1) || (productID >= productsList.length)) &&
+        (isNaN(productID) || (productID < 1) || (productID > productsList.length)) &&
           <NotFound destination='/catalog' name='product' />
       }
     </div>

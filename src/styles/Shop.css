@@ -10,7 +10,9 @@
 
 .productContainer {
   margin: 2rem;
-  border: 0.1rem solid black;
+  border: 0.1rem solid var(--color-border);
+  background-color: var(--color-primary-fg);
+  color: var(--color-secondary-text);
   padding: 1rem;
 }
 
@@ -18,8 +20,44 @@
   width: 20rem;
 }
 
+.productItem > div {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
 .containerBuy {
   display: flex;
   justify-content: space-between;
 }
 
+.categoryContainer {
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.categoryContainer > button {
+  padding: 0.5rem;
+  width: 5rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-primary-fg);
+  border: solid 0.1rem var(--color-secondary-fg);
+}
+
+.searchBar {
+  display: flex;
+  gap: 0.3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBar > input {
+  border-radius: 0.5rem;
+  border: solid 0.1rem var(--color-secondary-fg);
+  width: 20rem;
+  height: 1.1rem;
+}

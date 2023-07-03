@@ -19,3 +19,22 @@
   font-size: large;
 }
 
+.ops {
+  font-size: larger;
+  font-weight: 600;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ops > div {
+  font-size: large;
+  font-weight: 400;
+}
+
+.ops > div > div {
+  display: inline-block;
+  font-weight: 600;
+}
+

@@ -1,11 +1,12 @@
 :root.dark {
-  --color-primary-bg: #282c34;
-  --color-secondary-bg: #000;
+  --color-primary-bg: #000;
+  --color-secondary-bg: #282c34;
   --color-primary-fg: #b0bec5;
   --color-secondary-fg: #282c34;
   --color-primary-text: #eeffff;
   --color-secondary-text: #000;
   --color-white-text: #fff;
+  --color-border: #fff;
   --icon-filter: invert(100%);
   --color-inactive: #474747;
   --color-active: #80cbc4;
@@ -19,11 +20,12 @@
 :root.light {
   --color-primary-bg: #B0BEC5;
   --color-secondary-bg: #FAFAFA;
-  --color-primary-fg: #546E7A;
+  --color-primary-fg: #688796;
   --color-secondary-fg: #282c34;
   --color-primary-text: #272727;
   --color-secondary-text: #000;
   --color-white-text: #fff;
+  --color-border: #000;
   --icon-filter: invert(0%);
   --color-inactive: #D2D4D5;
   --color-active: #39ADB5;
@@ -38,6 +40,30 @@ body, html {
   color: var(--color-primary-text);
   background-color: var(--color-primary-bg);
   overflow-y: hidden;
+}
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-scroll-active);
+  border-radius: 5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-scroll-inactive);
+  border-radius: 5rem;
 }
 
 .App {
@@ -74,9 +100,11 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: 1rem;
-  margin-right: 5rem;
-  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-right: 5rem;
+  padding-bottom: 1rem;
+  background-color: var(--color-secondary-bg);
+  border-bottom: solid var(--color-border) 0.1rem;
 }
 
 .App-header > :first-child {
@@ -90,9 +118,9 @@ body, html {
 }
 
 .App-container {
-  border-top: solid black 0.1rem;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   overflow: none;
+  padding: 1rem;
 }

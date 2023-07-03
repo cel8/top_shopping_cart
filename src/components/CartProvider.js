@@ -33,6 +33,8 @@ const CartReducer = (state, action) => {
         update.splice(index, 1);
         return update;
       }
+    case 'wipe':
+      return [];
     default: 
       return state;
   }
@@ -94,13 +96,18 @@ const CartProvider = ({children}) => {
     return total;
   }, [cart]);
 
+  const wipe = useCallback(() => {
+    setCart({type: 'wipe'})
+  }, []);
+
   const contextValue = useMemo(() => ({
     cart,
     add,
     remove,
     orderTotal,
-    orderItems
-  }), [cart, add, remove, orderTotal, orderItems]);
+    orderItems,
+    wipe
+  }), [cart, add, remove, orderTotal, orderItems, wipe]);
 
   return (
     <CartContext.Provider value={contextValue}>
