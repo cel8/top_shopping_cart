@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/top_shopping_cart/static/css/main.54185804.css",
+    "main.js": "/top_shopping_cart/static/js/main.3133964a.js",
+    "static/media/pizza-capricciosa.jpg": "/top_shopping_cart/static/media/pizza-capricciosa.7f5c6f36d72a210f5745.jpg",
+    "static/media/pizza-ricotta.jpg": "/top_shopping_cart/static/media/pizza-ricotta.8e60d4f4f8ad4c965033.jpg",
+    "static/media/pizza-calzone-classico.jpg": "/top_shopping_cart/static/media/pizza-calzone-classico.e757b97eb630329208b1.jpg",
+    "static/media/pizza-marinara.jpg": "/top_shopping_cart/static/media/pizza-marinara.5f79446f3cf1c760bb89.jpg",
+    "static/media/pizza-pomodorini.jpg": "/top_shopping_cart/static/media/pizza-pomodorini.f6e4529e928e36ef55fd.jpg",
+    "static/media/pizza-margherita-dop.jpg": "/top_shopping_cart/static/media/pizza-margherita-dop.17d896204b547b34f0d2.jpg",
+    "static/media/restaurant.jpg": "/top_shopping_cart/static/media/restaurant.6cf58986b1f1d342eb60.jpg",
+    "static/media/pizza-scarpetta.jpg": "/top_shopping_cart/static/media/pizza-scarpetta.98053fa76bde18be748c.jpg",
+    "static/media/pizza-margherita-sbagliata.jpg": "/top_shopping_cart/static/media/pizza-margherita-sbagliata.93e340f30f096bb8613d.jpg",
+    "index.html": "/top_shopping_cart/index.html",
+    "main.54185804.css.map": "/top_shopping_cart/static/css/main.54185804.css.map",
+    "main.3133964a.js.map": "/top_shopping_cart/static/js/main.3133964a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54185804.css",
+    "static/js/main.3133964a.js"
+  ]
+}
