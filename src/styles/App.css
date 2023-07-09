@@ -117,7 +117,7 @@ body, html {
 .App-header > :last-child {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5rem;
+  gap: 1rem;
 }
 
 .App-container {
