@@ -99,6 +99,8 @@ body, html {
 .App-header {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: space-around;
   padding-top: 1rem;
   padding-right: 5rem;
@@ -114,7 +116,8 @@ body, html {
 
 .App-header > :last-child {
   display: flex;
-  gap: 5rem;
+  flex-wrap: wrap;
+  gap: 2.5rem;
 }
 
 .App-container {
