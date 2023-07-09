@@ -40,7 +40,7 @@ const Shop = () => {
     const index = searchParam.get('p');
     const url = index === "-1" ? 'product/404' : productsList[index].to;
     setTimeout(() => {
-      navigate(`/catalog/${url}`);    
+      navigate(`/catalog/${url}`);
     }, 500);
   }, [searchParam, navigate]);
 

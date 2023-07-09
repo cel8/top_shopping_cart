@@ -34,16 +34,18 @@
   gap: 1rem;
 }
 
-.orderBox > p:first-of-type {
+.orderBox > div:first-of-type {
   font-size: large;
+  margin-bottom: 1.5rem;
 }
 
-.orderBox > p:last-of-type {
+.orderBox > div:last-of-type {
   font-size: larger;
+  margin-bottom: 1.5rem;
 }
 
-.orderBox > p:first-of-type > div,
-.orderBox > p:last-of-type > div  {
+.orderBox > div:first-of-type > div,
+.orderBox > div:last-of-type > div  {
   font-weight: 600;
   display: inline;
 }

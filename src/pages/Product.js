@@ -14,7 +14,6 @@ const Product = () => {
   const contextValue = useCartContext();
 
   const getProduct = useCallback(() => {
-    console.log(productsList[productID - 1].name)
     return productsList[productID - 1];
   }, [productID]);
 
@@ -28,9 +27,9 @@ const Product = () => {
         !isNaN(productID) && (productID >= 1 && productID <= productsList.length) &&
         <div className="product">
           <h1>{getProduct().name}</h1>
-          <p>Category: <p>{getProduct().category}</p></p>
-          <p>Description: <p>{getProduct().description}</p></p>
-          <p>Price: <p>{getProduct().price} €</p></p>
+          <div>Category: <p>{getProduct().category}</p></div>
+          <div>Description: <p>{getProduct().description}</p></div>
+          <div>Price: <p>{getProduct().price} €</p></div>
           <div className="product-control">
             <button onClick={() => navigate(-1)}>
               <FontAwesomeIcon icon={faCircleLeft} />

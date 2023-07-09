@@ -48,8 +48,8 @@ const Cart = () => {
         contextValue && (contextValue.cart.length !== 0) && 
         <div className="orderBox">
           <h2>Order Summary</h2>
-          <p>Items: <div>{contextValue ? contextValue.orderItems() : 0}</div></p>
-          <p>Order total: <div>{contextValue ? contextValue.orderTotal() : 0} €</div></p>
+          <div>Items: <div>{contextValue ? contextValue.orderItems() : 0}</div></div>
+          <div>Order total: <div>{contextValue ? contextValue.orderTotal() : 0} €</div></div>
           <button onClick={() => onAlertEvent()}>Checkout</button>
         </div>
       }

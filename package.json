@@ -3,6 +3,34 @@
   "version": "0.1.0",
   "homepage": "https://cel8.github.io/top_shopping_cart",
   "private": true,
+  "jest": {
+    "moduleNameMapper": {
+      "^@src-path/(.*)$": "<rootDir>/src/$1",
+      "^@components/(.*)$": "<rootDir>/src/components/$1",
+      "^@assets/(.*)$": "<rootDir>/src/assets/$1",
+      "^@pages/(.*)$": "<rootDir>/src/pages/$1",
+      "^@styles/(.*)$": "<rootDir>/src/styles/$1"
+    }
+  },
+  "babel": {
+    "env": {
+      "production": {
+        "plugins": [
+          [
+            "react-remove-properties",
+            {
+              "properties": [
+                "data-test"
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    "presets": [
+      "react-app"
+    ]
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
@@ -30,8 +58,21 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "eslint:recommended"
+    ],
+    "globals": {
+      "NodeJS": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "rules": {
+      "no-empty": [
+        "error",
+        {
+          "allowEmptyCatch": true
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -46,7 +87,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "babel-plugin-react-remove-properties": "^0.3.0",
     "gh-pages": "^5.0.0",
+    "history": "^5.3.0",
     "react-app-rewire-alias": "^1.1.7",
     "react-app-rewired": "^2.2.1"
   }
